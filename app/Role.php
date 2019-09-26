@@ -3,13 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use OwenIt\Auditing\Contracts\Auditable;
+use Spatie\Activitylog\Traits\LogsActivity;
 
-class Role extends Model implements Auditable
+class Role extends Model 
 {
-    use \OwenIt\Auditing\Auditable;
-   
-
+    use LogsActivity;
+    
     protected $fillable = ['name','permissions'];
 
     /**
@@ -20,6 +19,17 @@ class Role extends Model implements Auditable
     public function hasPermission(){
     		
     		return $this->fetchPermissions();
+    }
+
+
+     /**
+     * Spatie description overriding.
+     *
+     * @return void
+     */
+      public function getDescriptionForEvent(string $eventName): string
+    {
+        return "Role-{$eventName}";
     }
 
     /**

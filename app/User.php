@@ -5,14 +5,13 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use OwenIt\Auditing\Contracts\Auditable;
+use Spatie\Activitylog\Traits\LogsActivity;
 
-class User extends Authenticatable implements Auditable
+
+class User extends Authenticatable
 {
     use Notifiable;
-    use \OwenIt\Auditing\Auditable;
-
-
+    use LogsActivity;
 
     /**
      * The attributes that are mass assignable.
@@ -40,6 +39,17 @@ class User extends Authenticatable implements Auditable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+     /**
+     * Spatie description overriding.
+     *
+     * @return void
+     */
+      public function getDescriptionForEvent(string $eventName): string
+    {
+        return "User-{$eventName}";
+    }
 
     
     /**

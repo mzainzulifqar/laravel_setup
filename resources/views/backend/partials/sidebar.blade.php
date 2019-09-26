@@ -140,6 +140,27 @@
 	                            </ul>
 	                        </li>
 	                        @endcan
+
+
+	                           @can('view-activity',User::class)
+	                         <li class="nav-item">
+	                            <a href="#" class="nav-link nav-toggle">
+	                                <i class="material-icons">flag</i>
+	                                <span class="title">Activities</span>
+	                                <span class="arrow"></span>
+	                                {{-- <span class="label label-rouded label-menu label-danger">new</span> --}}
+	                            </a>
+	                            <ul class="sub-menu">
+	                                <li class="nav-item">
+	                                    <a href="{{ route('activity.index') }}" class="nav-link ">
+	                                        <span class="title">View</span>
+	                                    </a>
+	                                </li>
+	                              
+	                            </ul>
+	                        </li>
+	                        @endcan
+	                        
 	                        <li class="nav-item">
 	                            <a href="#" class="nav-link nav-toggle">
 	                                <i class="material-icons">email</i>

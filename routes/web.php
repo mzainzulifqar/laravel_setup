@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Spatie\Activitylog\Models\Activity;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,15 @@ use Illuminate\Http\Request;
 |
 */
 Route::get('/testing',function(){
+	// activity()->log('Look, I logged something');
 
+	// $roles = \App\Role::with('audits.user')->get();
+	// dd(Activity::all()->last());
+	$activity = Activity::all()->last();
+
+	echo		$activity->description; //returns 'created'
+	echo	($activity->subject)->name; //returns the instance of NewsItem that was created
+	echo	$activity->causer->name; 
 });
 
 
@@ -41,6 +50,7 @@ Route::resource('admin','AdminController');
 Route::resource('role','RoleController');
 Route::resource('permission','PermissionController');
 Route::resource('user','UserController');
+Route::resource('activity','ActivityController');
 
 });
 // Resources end here

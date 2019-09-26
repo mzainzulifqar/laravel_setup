@@ -61,6 +61,9 @@ class PermissionSeeder extends Seeder
             ['name' => 'create-order','created_at' => now()],
             ['name' => 'update-order','created_at' => now()],
             ['name' => 'delete-order','created_at' => now()],
+
+            ['name' => 'view-activity','created_at' => now()],
+            ['name' => 'delete-activity','created_at' => now()],
             
     		
 
