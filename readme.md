@@ -15,7 +15,8 @@ Laravel setup is a ready to build app with main functionalities built in like Us
 
 - Connect your database.
 - Run "php artisan migrate --seed".
-- admin@gmail.com //secret.
+- email = admin@gmail.com 
+- password = secret.
 
 
 ## Contributions
