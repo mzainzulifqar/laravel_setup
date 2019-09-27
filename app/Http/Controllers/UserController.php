@@ -149,6 +149,13 @@ class UserController extends Controller
        {
         $user->roles()->detach();
         $user->roles()->attach($roles);
+
+        activity()
+       ->causedBy(auth()->user())
+       ->performedOn($user)
+       ->withProperties(['key' => $roles])
+       ->log('assign role');
+
         return back()->with('success','User Updated Successfully');
        }
     }
