@@ -87,7 +87,7 @@
 
 												<tr class="odd gradeX">
 													
-													<td class="center">{{$activity->causer->name}}</td>
+													<td class="center">{{$activity->causer->name ?? 'Unknown'}}</td>
 
 													<td class="center">{{$activity->description}}</td>
 													<td class="text-center">{{$activity->subject->name}}</td>

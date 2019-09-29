@@ -35,29 +35,14 @@
 									    </div>
 	                            </div>
 	                        </li>
-	                        <li class="menu-heading">
-			                	<span>-- Main</span>
-			                </li>
+	                       
 	                        <li class="nav-item start active">
 	                            <a href="#" class="nav-link nav-toggle">
 	                                <i class="material-icons">dashboard</i>
 	                                <span class="title">Dashboard</span>
                                 	<span class="selected"></span>
-                                	<span class="arrow open"></span>
 	                            </a>
-	                            <ul class="sub-menu">
-	                                <li class="nav-item active">
-	                                    <a href="index.html" class="nav-link ">
-	                                        <span class="title">Dashboard 1</span>
-	                                        <span class="selected"></span>
-	                                    </a>
-	                                </li>
-	                                <li class="nav-item ">
-	                                    <a href="dashboard2.html" class="nav-link ">
-	                                        <span class="title">Dashboard 2</span>
-	                                    </a>
-	                                </li>
-	                            </ul>
+	                          
 	                        </li>
 
 	                         @can('view-user',User::class)
@@ -161,7 +146,7 @@
 	                        </li>
 	                        @endcan
 	                        
-	                        <li class="nav-item">
+	                        {{-- <li class="nav-item">
 	                            <a href="#" class="nav-link nav-toggle">
 	                                <i class="material-icons">email</i>
 	                                <span class="title">Email</span>
@@ -761,7 +746,7 @@
 	                                        <i class="fa fa-volume-up"></i> Item 3 </a>
 	                                </li>
 	                            </ul>
-	                        </li>
+	                        </li> --}}
 	                    </ul>
 	                </div>
                 </div>

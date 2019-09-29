@@ -13,6 +13,8 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
+      activity()->disableLogging();
+
      $user = User::create(
        	['name'=> 'admin',
        	'password' => bcrypt('secret'),
@@ -61,5 +63,7 @@ class RoleSeeder extends Seeder
        )]);
 
          $user->roles()->attach($admin->id);
+         
+         activity()->enableLogging();
     }
 }
