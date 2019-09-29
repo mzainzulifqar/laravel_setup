@@ -6,6 +6,7 @@
 Laravel setup is a ready to build app with main functionalities built in like User management,Roles and Permissions,Login,Registration,Beautiful and elegant responsive admin panel just grab it and ready to go Some Important points:
 
 - Ready Migrations and Seeding.
+- Separate MultiAuth for admin and users based on Roles.
 - Roles and Permissions.
 - Log Activity of whole app.
 - Beautiful Design.
